@@ -1,0 +1,10 @@
+<form method="POST" action="/product/{{id}}?_method=PUT">
+  <div class = "newProduct">
+    <div id="{{id}}">
+      <h1>Product: <input type="text" name="name" placeholder="{{name}}"></input></h1>
+      <h2>Price: <input type="text" name="price" placeholder="${{price}}"> </input></h2>
+      <h3>In Stock: Qty <input type="text" name="inventory" placeholder="{{inventory}}"></input></h3>
+      <h4>ID: {{id}}</h4>
+    </div>
+  </div>
+</form>

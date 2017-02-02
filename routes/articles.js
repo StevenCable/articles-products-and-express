@@ -44,16 +44,13 @@ router.route('/:title')
   })
 
  .put((req,res) => {
-    articleModel.editArticleData(req.body, req.params.title)
+    articleModel.editArticleData(req.body, req.params.title)    
     .then(newArticle => {
-      res.redirect(303,`/articles/${encodeURIComponent(newArticle.title)}`);
+      res.redirect(303,`/articles/${encodeURIComponent(req.body.title)}`);
     })
-    .catch(er =>{
+    .catch(err =>{
       console.log(err);
     });
-  //   let articleId = req.params.id;
-  //   articles.editArticleData(articleId, req.body);
-  //   res.redirect(303, `${articleId}`);
   })
 
  .delete((req, res) => {
@@ -68,11 +65,11 @@ router.route('/:title')
 router.route('/:title/edit')
 
   .get((req,res) => {
-    let articleTitle = req.body.title;
+    let articleTitle = req.params.title;
 
     articleModel.findArticleByTitle(articleTitle)
-    .then(newArticle => {
-      res.render(`/partials/editArticle}`, {});
+    .then(articles => {
+      res.render(`/partials/articles-edit}`, {"articles": articles});
     })
     .catch(er =>{
       console.log(err);

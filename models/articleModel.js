@@ -32,7 +32,7 @@ function editArticleData(newArticle, oldArticle){
     title = '${newArticle.title}', 
     body = '${newArticle.body}', 
     author = '${newArticle.author}', 
-    urlPath = '${encodeURIComponent(newArticle.uri)}' WHERE title = '${oldArticle.title}';`);
+    urlPath = '${encodeURIComponent(newArticle.title)}' WHERE title = '${oldArticle}';`);
   }
 
 function deleteArticle(title){
@@ -50,7 +50,7 @@ module.exports = {
   newArticle,
   findArticleByTitle,
   findArticleById,
-  // editArticleData,
+  editArticleData,
   deleteArticle,
   getAllArticles
 };

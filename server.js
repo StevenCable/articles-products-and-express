@@ -8,9 +8,6 @@ const products = require('./routes/products');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 
-
-
-
 const hbs = handlebars.create({
     extname: '.hbs',
     defaultLayout: 'app'

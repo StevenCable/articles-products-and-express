@@ -15,7 +15,12 @@ CREATE TABLE products (
   inventory integer
 );
 
--- DROP TABLE IF EXISTS "articles";
--- CREATE TABLE articles (
+DROP TABLE IF EXISTS "articles";
+CREATE TABLE articles (
+  id SERIAL NOT NULL PRIMARY KEY, 
+  title varchar(69) NOT NULL, 
+  body varchar, 
+  author varchar(69),
+  urlPath varchar(69)
+);
 
--- )

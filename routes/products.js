@@ -11,7 +11,7 @@ router.route('/')
   .get((req, res) =>{
     productModel.getAllProducts()
     .then(products => {
-      res.render('./partials/index', {"products": products});
+      res.render('./partials/productsIndex', {"products": products});
     })
     .catch(err =>{
       console.log(err);
@@ -34,7 +34,7 @@ router.route('/:id')
     productModel.findProductById(req.params.id)
     .then(product => {
       console.log("product: ", product);
-      res.render('./partials/index', {"products": product});
+      res.render('./partials/productsIndex', {"products": product});
     })
     .catch(err =>{
       console.log(err);
